@@ -4,7 +4,7 @@
 <nav>
 	<span class="prev">
 		{% if prevPost %}
-			<a href='{{ ROOT_URL }}/{{ prevPost.path }}'>
+			<a href='/{{ prevPost.path }}'>
 				&laquo; {{ prevPost.title }}
 			</a>
 		{% else %}
@@ -18,7 +18,7 @@
 
 	<span class="next">
 		{% if nextPost %}
-			<a href='{{ ROOT_URL }}/{{ nextPost.path }}'>
+			<a href='/{{ nextPost.path }}'>
 				{{ nextPost.title }} &raquo;
 			</a>
 		{% else %}
@@ -29,9 +29,11 @@
 <article>
 	<header>
 		<h1>{{ title }}</h1>
-		<h5><time pubdate="pubdate">{{ date|date:"F j, Y" }}</time> by <span class="author">{{ author }}</address></h5>
+		<h5><time pubdate="{{ date|date:"F j, Y" }}"</time> by <span class="author">{{ author }}</address></h5>
 	</header>
-		{% block body %}{% endblock %}
+		{% block body %}
+		This is where the post contents is.
+		{% endblock %}
 	<footer>
 		Thanks for reading. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 	</footer>
